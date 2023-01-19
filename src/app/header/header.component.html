@@ -1,0 +1,33 @@
+<div class="wrapper container d-flex">
+    <app-logo></app-logo>
+    <div class="options">
+        <div class="home" routerLinkActive = "l-active" [routerLinkActiveOptions]="{exact:true}" routerLink = "">
+            <i class="fa-solid fa-house"></i>
+        </div>
+        <div *ngIf = "!user.data" class="login" routerLinkActive = "l-active" routerLink = "login">Login</div>
+        <div *ngIf = "!user.data" class="register" routerLinkActive = "l-active" routerLink = "register">Register</div>
+        <div *ngIf = "user.data" class="dropdown menu">
+            <div class = "dropdown-toggle" data-bs-toggle="dropdown">Menu</div>
+            <div class="dropdown-menu">
+                <li class="dropdown-item p-2" routerLinkActive = "active" routerLink = "completed">Completed books</li>
+                <li class="dropdown-item p-2" routerLinkActive = "active" routerLink = "wishlist">Wishlist</li>
+            </div>
+        </div>
+        <div *ngIf = "user.data" class="dropdown user">
+            <div  class="dropdown-toggle" data-bs-toggle="dropdown">
+                <i class="fa-solid fa-user-check"> </i>
+            </div>
+            <div class="dropdown-menu" style="width: max-content;">
+                <div class="dropdown-item-text px-3">
+                    <span class="u-name">{{user.data.userName}}</span><br>
+                    <span class="u-phone">{{user.data.Phone}}</span><br>
+                    <span class="u-mail">{{user.data.Email}}</span>
+                </div>
+                <div class="dropdown-divider"></div>
+                <div (click)="onLogout()" class="dropdown-item px-3">Logout</div>
+                <div routerLinkActive="active" routerLink = "login" class="dropdown-item px-3">Switch account</div>
+                <div routerLinkActive="active" routerLink = "register" class="dropdown-item px-3">Create another account</div>
+            </div>
+        </div>
+    </div>
+</div>

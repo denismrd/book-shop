@@ -1,0 +1,53 @@
+:host{
+    border-radius: 0 0 3px 3px;
+    border: solid 1px var(--light-line);
+    padding: 20px;
+    width: min(400px, 95%);
+}
+h1{
+    position: relative;
+    margin-bottom: 30px;
+    font-weight: 100;
+    font-size: 30px;
+    text-align: center;
+    letter-spacing: 2px;
+}
+label, .body div:not(:last-child){
+    margin-bottom: 10px;
+}
+.submit{
+    margin-top: 20px;
+    text-align: center;
+}
+input{
+    cursor: pointer;
+    width: 100%;
+    border: solid 1px var(--light-line);
+    border-radius: 3px;
+    padding: 10px;
+}
+input:focus{
+    border: solid 1px var(--logo-blue);
+    outline: none;
+}
+input.ng-touched.ng-invalid{
+    border: rgba(255, 0, 0, 0.589) 1px solid;
+}
+.validation-error{
+    display: none;
+}
+input.ng-touched.ng-invalid + .validation-error{
+    display: block;
+    margin-top: 12px;
+    color: red;
+    font-size: 12px;
+}
+.submit input{
+    background-color: #4a5ab3;
+    color: white;
+    width: auto;
+}
+*:disabled{
+    cursor: default;
+    opacity: .5;
+}

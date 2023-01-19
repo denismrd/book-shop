@@ -1,0 +1,16 @@
+<h1 class="small-underline">Login</h1>
+<form (ngSubmit) = "onSubmit(form)" class="body" #form = "ngForm">
+    <div class="email">
+        <label for="email">Email</label>
+        <input email required id ="email" name="email" type="email" ngModel/>
+        <div class="validation-error">*Enter valid email id</div>
+    </div>
+    <div class="password">
+        <label for="password">Password</label>
+        <input required id = "password" name = "password" type="password" ngModel/>
+        <div class="validation-error">*Enter valid password</div>
+    </div>
+    <div class="submit but">
+        <input type="submit" [disabled] = "!form.valid">
+    </div>
+</form>

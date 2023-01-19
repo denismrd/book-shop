@@ -1,0 +1,23 @@
+:host{
+    width:100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex: 1 0 0;
+}
+.wrapper{
+    height: 100%;
+    width:100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px rgb(204, 204, 204);
+    border-radius: 3px;
+    padding: 30px;
+}
+.no-books{
+    color: grey;
+    font-size: 20px;
+}

@@ -1,0 +1,40 @@
+.box{
+    display: flex;
+    align-items: center;
+    position: fixed;
+    padding: 0 12px;
+    border-left: orange 5px solid;
+    border-radius: 0 3px 3px 0;
+    background-color: white;
+    top: 25px;
+    box-shadow: 0 0 5px black;
+    min-width: min(40%, 300px);
+    max-width: 95%;
+    gap: 20px;
+    transition: .7s;
+    z-index: 1000;
+}
+.msg, .loading-box{
+    text-align: center;
+    padding: 12px 0;
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+.loading-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+i{
+    font-size: 20px;
+    margin-left: auto;
+    color: black;
+    cursor: pointer;
+}
+.appear{
+    right: 2.5vw;
+}
+.disappear{
+    right: -100%;
+}

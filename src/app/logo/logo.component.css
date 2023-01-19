@@ -1,0 +1,9 @@
+
+.blue{
+    color: var(--logo-blue);
+    font-size: 20px;
+}
+.books{
+    letter-spacing: 2px;
+}
+hr{margin: 0}

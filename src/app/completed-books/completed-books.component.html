@@ -1,0 +1,15 @@
+<div *ngIf="loading else elseBlock" class="d-flex align-items-center justify-content-center" style="height: 100%;">
+    <div class="spinner-border" style = "width:50px;height:50px"></div>
+</div>
+<ng-template #elseBlock>
+    <div class="component-title small-underline d-block text-center">Completed Books</div>
+    <div *ngIf="!loading" class="wrapper">
+        <div *ngIf="user.data?.Completed.length==0" class="no-books text-center">
+            <i class="fa-solid fa-circle-info mb-4" style="font-size: 40px;"></i><br>
+            No book is marked as completed...
+        </div>
+        <ng-container *ngFor = "let i of user.data?.Completed">
+            <app-book-card [book]="bookSr.getBookById(i)"></app-book-card>
+        </ng-container>
+    </div>
+</ng-template>

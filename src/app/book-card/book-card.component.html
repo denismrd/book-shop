@@ -1,0 +1,50 @@
+<div class="card c-front box" style="width: 250px;" [style.height]="user.data?'416px':'342px'" [style.transform]="showBack?'rotateY(-180deg)':'rotateY(0deg)'" [style.z-index]="showBack?0:1">
+    <img [src]="'assets/' + book.imageLink" alt="book-image" class="card-img-top">
+    <div class="card-body">
+        <div class="b-title">{{book.title}}</div>
+    </div>
+    <div (click)="showBack=true" class="card-link-box">
+        <div class="card-link">View more</div>
+    </div>
+    <ul *ngIf="user.data" class="list-group list-group-flush">
+        <ng-template #welse>
+            <li class="list-group-item" (click)="addWl()">Add to wishlist <i class="fa-solid fa-arrow-right-long"></i></li>
+        </ng-template>
+        <ng-template #celse>
+            <li class="list-group-item" (click)="addCom()">Add to completed <i class="fa-solid fa-arrow-right-long"></i></li>
+        </ng-template>
+        <li (click)="remWl()" *ngIf="user.data.WishList.includes(book.id); else welse" class="list-group-item">Remove from wishlist <i class="fa-solid fa-xmark cross"></i></li>
+        <li (click)="remCom()" *ngIf="user.data.Completed.includes(book.id); else celse" class="list-group-item">Remove from completed <i class="fa-solid fa-xmark cross"></i></li>
+    </ul>
+</div>
+
+<div class="card box c-back" style="width: 250px;" [style.height]="user.data?'416px':'342px'" [style.transform]="showBack?'rotateY(0deg)':'rotateY(180deg)'" [style.z-index]="showBack?1:0">
+    <div class="card-body">
+        <div class="bold">Title</div>
+        <div class="text">{{book.title}}</div>
+        <div class="bold">Author</div>
+        <div class="text">{{book.author}}</div>
+        <div class="bold">Country</div>
+        <div class="text">{{book.country}}</div>
+        <div class="bold">Language</div>
+        <div class="text">{{book.language}}</div>
+        <div class="bold">Year</div>
+        <div class="text">{{book.year}}</div>
+        <div class="bold">Pages</div>
+        <div class="text">{{book.pages}}</div>
+    </div>
+    <div class="card-link-box">
+        <div (click)="showBack=false" class="card-link">Back</div>
+        <a class="card-link" [href] = "book.link" target="_blank">Read more</a>
+    </div>
+    <ul *ngIf="user.data" class="list-group list-group-flush">
+        <ng-template #welse>
+            <li class="list-group-item" (click)="addWl()">Add to wishlist <i class="fa-solid fa-arrow-right-long"></i></li>
+        </ng-template>
+        <ng-template #celse>
+            <li class="list-group-item" (click)="addCom()">Add to completed <i class="fa-solid fa-arrow-right-long"></i></li>
+        </ng-template>
+        <li (click)="remWl()" *ngIf="user.data.WishList.includes(book.id); else welse" class="list-group-item">Remove from wishlist <i class="fa-solid fa-xmark cross"></i></li>
+        <li (click)="remCom()" *ngIf="user.data.Completed.includes(book.id); else celse" class="list-group-item">Remove from completed <i class="fa-solid fa-xmark cross"></i></li>
+    </ul>
+</div>

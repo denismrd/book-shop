@@ -1,0 +1,16 @@
+.main{
+    padding: 0 2vw 30px 2vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    min-height: 83vh;
+}
+.online-status{
+    border: red solid 1px;
+    color: red;
+    padding: 10px;
+    border-radius: 3px;
+    margin: 0 2vw 30px;
+}

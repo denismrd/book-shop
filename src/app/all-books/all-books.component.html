@@ -1,0 +1,11 @@
+<div *ngIf="loading else elseBk" class="d-flex align-items-center justify-content-center" style="height: 100%;">
+    <div class="spinner-border" style = "width:50px;height:50px"></div>
+</div>
+<ng-template #elseBk>
+    <div class="component-title small-underline d-block text-center">All Books</div>
+    <div class="wrapper">
+        <ng-container *ngFor = "let i of books">
+            <app-book-card [book]="i"></app-book-card>
+        </ng-container>
+    </div>
+</ng-template>

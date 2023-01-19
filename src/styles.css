@@ -1,1 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+:root{
+    --light-line : rgba(0, 0, 0, 0.151);
+    --logo-blue : rgb(0, 0, 175);
+    --header-grey : rgb(245, 245, 245);
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+}
+.small-underline::before{
+    content: "";
+    display: block;
+    position: absolute;
+    bottom:-5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3ch;
+    height: 1px;
+    background-color: var(--logo-blue);
+}
+.component-title{
+    display: inline-block;
+    position: relative;
+    margin-bottom: 30px;
+    font-weight: 300;
+    font-size: 30px;
+    letter-spacing: 3px;
+    line-height: 1;
+}
+

@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  apiUrl : 'https://my-json-server.typicode.com/denismrd/json-for-server'
+
 };

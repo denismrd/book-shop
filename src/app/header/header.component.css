@@ -1,0 +1,58 @@
+:host{
+    position: sticky;
+    top: 0;
+    width: 100%;
+    padding: 15px 20px;
+    display: flex;
+    background-color: var(--header-grey);
+    box-shadow: 0 2px 3px var(--light-line);
+    z-index: 100;
+    margin-bottom: 30px;
+    /* border-bottom: .5px solid rgba(0, 0, 0, 0.226); */
+}
+.wrapper{
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.options{
+    cursor: pointer;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.699);
+    display: flex;
+    gap: 20px;
+    margin-left: auto;
+    align-items: center;
+}
+@media(max-width:390px) {
+    .options{
+        margin-left: 0;
+    }
+}
+.home, .login, .register, .menu>div:first-child, .user>div:first-child{
+    padding:10px;
+    border-bottom: solid 2px transparent; 
+}
+.l-active{
+    color: black;
+    border-bottom: solid 2px var(--logo-blue) !important;
+}
+.active{
+    background-color: #2a2a99;
+}
+.wrapper .options .dropdown-item:active{
+    background-color: #e9ecef;
+    color: black;
+}
+.options>div:hover{
+    color: black;
+}
+.u-name{
+    font-weight: 200;
+    font-size: 20px;
+}
+.u-phone, .u-mail{
+    color: grey;
+    font-weight: 800;
+    font-size: 12px;
+}
